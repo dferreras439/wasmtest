@@ -1,1 +1,24 @@
-<H1>Hello World</H1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WASM Rust Demo</title>
+</head>
+<body>
+    <h1>Rust WASM Hello World</h1>
+    <input type="file" id="file-input" />
+    <button id="append-button">Append Hello World</button>
+
+    <script type="module">
+        import init, { append_hello_world } from "./pkg/your_project_name.js";
+
+        async function run() {
+            await init(); // Load the WASM module
+            document.getElementById("append-button").addEventListener("click", append_hello_world);
+        }
+
+        run();
+    </script>
+</body>
+</html>
